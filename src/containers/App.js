@@ -1,24 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import CardList from '../components/CardList'
-import SearchBox from '../components/SearchBox'
-import Scroll from '../components/Scroll'
-import ErrorBoundary from '../components/ErrorBoundary'
 import './App.css'
 
-import { setSearchField, requestRobots } from '../actions'
+import CardList from '../components/RobotCard/CardList'
+import SearchBox from '../components/SearchBox/SearchBox'
+import Scroll from '../components/Scroll/Scroll'
+import ErrorBoundary from '../hoc/ErrorBoundary'
 
-const mapStateToProps = state => ({
-	searchField: state.searchRobots.searchField,
-	robots: state.requestRobots.robots,
-	isPending: state.requestRobots.isPending,
-	error: state.requestRobots.error,
-})
-
-const mapDispatchToProps = dispatch => ({
-	onSearchChange: event => dispatch(setSearchField(event.target.value)),
-	onRequestRobots: () => dispatch(requestRobots()),
-})
+import { setSearchField, requestRobots } from '../store/actions'
 
 class App extends Component {
 	componentDidMount() {
@@ -47,5 +36,17 @@ class App extends Component {
 		)
 	}
 }
+
+const mapStateToProps = state => ({
+	searchField: state.searchRobotsReducer.searchField,
+	robots: state.requestRobotsReducer.robots,
+	isPending: state.requestRobotsReducer.isPending,
+	error: state.requestRobotsReducer.error,
+})
+
+const mapDispatchToProps = dispatch => ({
+	onSearchChange: event => dispatch(setSearchField(event.target.value)),
+	onRequestRobots: () => dispatch(requestRobots()),
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

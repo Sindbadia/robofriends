@@ -7,11 +7,12 @@ import thunk from 'redux-thunk'
 import './index.css'
 import App from './containers/App'
 import reportWebVitals from './reportWebVitals'
-import { searchRobots, requestRobots } from './reducers'
+import searchRobotsReducer from './store/reducers/searchRobots'
+import requestRobotsReducer from './store/reducers/requestRobots'
 import 'tachyons'
 
 const logger = createLogger()
-const rootReducer = combineReducers({ searchRobots, requestRobots })
+const rootReducer = combineReducers({ searchRobotsReducer, requestRobotsReducer })
 const store = createStore(rootReducer, applyMiddleware(thunk, logger))
 
 ReactDOM.render(
