@@ -12,8 +12,9 @@ import requestRobotsReducer from './store/reducers/requestRobots'
 import 'tachyons'
 
 const logger = createLogger()
+
 const rootReducer = combineReducers({ searchRobotsReducer, requestRobotsReducer })
-const store = createStore(rootReducer, applyMiddleware(thunk))
+const store = createStore(rootReducer, applyMiddleware(thunk, logger))
 
 ReactDOM.render(
 	<React.StrictMode>
