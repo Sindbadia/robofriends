@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import './App.css'
 
 import Header from '../components/Header/Header'
-import CardList from '../components/RobotCard/CardList'
+import CardList from '../components/Card/CardList'
 import SearchBox from '../components/SearchBox/SearchBox'
 import Scroll from '../components/Scroll/Scroll'
 import ErrorBoundary from '../hoc/ErrorBoundary'
