@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should renders MainPage without crashing 1`] = `
+<div
+  className="tc"
+>
+  <h1
+    className="f1"
+  >
+    RoboFriends
+  </h1>
+  <button
+    color="red"
+    id="counter"
+    onClick={[Function]}
+  >
+    Count: 
+    0
+  </button>
+  <div
+    className="pa2"
+  >
+    <input
+      aria-label="Search Robots"
+      className="pa3 ba b--green bg-lightest-blue"
+      placeholder="search robots"
+      type="search"
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "border": "5px solid black",
+        "height": "800px",
+        "overflowY": "scroll",
+      }
+    }
+  >
+    <div />
+  </div>
+</div>
+`;

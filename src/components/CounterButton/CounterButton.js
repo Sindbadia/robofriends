@@ -5,22 +5,14 @@ class CounterButton extends PureComponent {
 		count: 0,
 	}
 
-	// shouldComponentUpdate(nextProps, nextState) {
-	// 	if (this.state.count !== nextState.count) {
-	// 		return true
-	// 	}
-	// 	return false
-	// }
-
 	updateCount = () => {
 		this.setState(prevState => ({ count: prevState.count + 1 }))
 	}
 
 	render() {
-		console.log('[CounterButton]')
 		return (
 			<Fragment>
-				<button color={this.props.color} onClick={this.updateCount}>
+				<button id='counter' color={this.props.color} onClick={this.updateCount}>
 					Count: {this.state.count}
 				</button>
 			</Fragment>
